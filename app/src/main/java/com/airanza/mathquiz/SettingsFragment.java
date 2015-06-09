@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.mathquiz.R;
+import com.airanza.mathquiz.R;
 
 public class SettingsFragment extends Fragment {
 	@Override

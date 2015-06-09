@@ -31,11 +31,7 @@ import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.example.mathquiz.R;
-
-/**
- * Created by ecrane on 3/31/2015.
- */
+import com.airanza.mathquiz.R;
 
 public class SplashActivity extends Activity {
     // Splash screen timer

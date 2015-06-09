@@ -17,7 +17,7 @@ import android.view.KeyEvent;
 
 import com.airanza.mathquiz.mathproblems.Problem;
 import com.airanza.mathquiz.mathproblems.ProblemGenerator;
-import com.example.mathquiz.R;
+import com.airanza.mathquiz.R;
 
 public class MainActivity extends Activity {
 	// for saving activity state in bundle:
