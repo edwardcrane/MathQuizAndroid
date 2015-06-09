@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@layout/radial_gradient"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/evaluateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/evaluate" />
+
+    <TextView
+        android:id="@+id/problemTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/evaluateTextView"
+        android:layout_below="@+id/evaluateTextView"
+        android:layout_marginTop="15dp"
+        android:text="@string/problem"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/solutionEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/problemTextView"
+        android:layout_alignBottom="@+id/problemTextView"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/problemTextView"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:hint="@string/solution" />
+
+    <TextView
+        android:id="@+id/feedbackTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/submitButton"
+        android:layout_below="@+id/solutionEditText"
+        android:layout_marginTop="14dp"
+        android:text="@string/feedback_hint" />
+
+    <TextView 
+        android:id="@+id/rightTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/feedbackTextView"
+        android:layout_toRightOf="@+id/feedbackTextView"
+        android:layout_marginLeft="10dp"
+        android:text="@string/num_right"
+        android:textColor="@color/green" />
+    
+	<TextView 
+        android:id="@+id/wrongTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/rightTextView"
+        android:layout_toRightOf="@+id/rightTextView"
+        android:layout_marginLeft="10dp"
+        android:text="@string/num_wrong"
+        android:textColor="@color/red" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/problemTextView"
+        android:layout_below="@+id/feedbackTextView"
+        android:layout_marginBottom="37dp"
+        android:text="@string/submit"
+        android:onClick="onSubmit" />
+    
+    <CheckBox
+        android:id="@+id/additionCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/submitButton"
+        android:layout_alignTop="@+id/submitButton"
+        android:layout_marginTop="66dp"
+        android:text="@string/addition"
+        android:onClick="onCheckAdditionCheckBox" />
+
+    <CheckBox
+        android:id="@+id/subtractionCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/additionCheckBox"
+        android:layout_below="@+id/additionCheckBox"
+        android:text="@string/subtraction" 
+        android:onClick="onCheckSubtractionCheckBox" />
+
+    <CheckBox
+        android:id="@+id/multiplicationCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/additionCheckBox"
+        android:layout_below="@+id/subtractionCheckBox"
+        android:text="@string/multiplication"
+        android:onClick="onCheckMultiplicationCheckBox" />
+
+    <CheckBox
+        android:id="@+id/divisionCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/additionCheckBox"
+        android:layout_below="@+id/multiplicationCheckBox"
+        android:text="@string/division"
+        android:onClick="onCheckDivisionCheckBox" />
+
+    <CheckBox
+        android:id="@+id/negativeNumbersCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/additionCheckBox"
+        android:layout_below="@+id/divisionCheckBox"
+        android:text="@string/negative_numbers"
+        android:onClick="onCheckNegativeNumbersCheckBox" />
+
+</RelativeLayout>

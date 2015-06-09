@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <CheckBox
+        android:id="@+id/additionCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="66dp"
+        android:text="@string/addition"
+        android:onClick="onCheckAdditionCheckBox" />
+
+    <CheckBox
+        android:id="@+id/subtractionCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/additionCheckBox"
+        android:layout_below="@+id/additionCheckBox"
+        android:text="@string/subtraction" 
+        android:onClick="onCheckSubtractionCheckBox" />
+
+    <CheckBox
+        android:id="@+id/multiplicationCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/additionCheckBox"
+        android:layout_below="@+id/subtractionCheckBox"
+        android:text="@string/multiplication"
+        android:onClick="onCheckMultiplicationCheckBox" />
+
+    <CheckBox
+        android:id="@+id/divisionCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/additionCheckBox"
+        android:layout_below="@+id/multiplicationCheckBox"
+        android:text="@string/division"
+        android:onClick="onCheckDivisionCheckBox" />
+
+    <CheckBox
+        android:id="@+id/negativeNumbersCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/additionCheckBox"
+        android:layout_below="@+id/divisionCheckBox"
+        android:text="@string/negative_numbers"
+        android:onClick="onCheckNegativeNumbersCheckBox" />
+    
+    <Button
+        android:id="@+id/clearStatisticsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/negativeNumbersCheckBox"
+        android:layout_below="@+id/negativeNumbersCheckBox"
+        android:layout_marginBottom="37dp"
+        android:text="@string/clear_statistics"
+        android:onClick="onClearStatistics" />
+    
+    <Button
+        android:id="@+id/okButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/clearStatisticsButton"
+        android:layout_below="@+id/clearStatisticsButton"
+        android:layout_marginBottom="37dp"
+        android:text="@string/ok"
+        android:onClick="onOKSettings" />
+    
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/okButton"
+        android:layout_below="@+id/clearStatisticsButton"
+        android:layout_marginBottom="37dp"
+        android:text="@string/cancel"
+        android:onClick="onCancelSettings" />
+</RelativeLayout>

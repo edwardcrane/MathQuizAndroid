@@ -1,0 +1,2 @@
+C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\classes\debug
+C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-e565802541f4f9dd31b76babf2fc092f4aa16b22.jar

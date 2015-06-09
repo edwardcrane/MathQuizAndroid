@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <size android:width="2dp" />
+    <solid android:color="#ffffff"  />
+</shape><!-- From: file:/C:/java/AndroidStudioProjects/MathQuizAndroid/app/src/main/res/drawable-xhdpi/color_cursor.xml -->

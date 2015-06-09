@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/java/AndroidStudioProjects/MathQuizAndroid/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="blue">#0000ff</color>
+    <color name="green">#00ff00</color>
+    <color name="red">#ff0000</color>
+    <!-- From: file:/C:/java/AndroidStudioProjects/MathQuizAndroid/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/C:/java/AndroidStudioProjects/MathQuizAndroid/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_settings">Settings</string>
+    <string name="action_show_splash">About...</string>
+    <string name="addition">Addition</string>
+    <string name="airanza_url">&lt;a href="http://www.airanza.com">www.airanza.com&lt;/a></string>
+    <string name="app_name">MathQuiz</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear_statistics">Clear Statistics</string>
+    <string name="division">Division</string>
+    <string name="evaluate">Evaluate:</string>
+    <string name="feedback_hint">Enter Solution</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="multiplication">Multiplication</string>
+    <string name="negative_numbers">Negative #s</string>
+    <string name="num_right">RIGHT: 0</string>
+    <string name="num_wrong">WRONG: 0</string>
+    <string name="ok">OK</string>
+    <string name="privacy_policy_url">&lt;a href="http://www.airanza.com/products/apass/privacy">Privacy Policy&lt;/a></string>
+    <string name="problem">Problem</string>
+    <string name="solution">Solution?</string>
+    <string name="submit">Submit</string>
+    <string name="subtraction">Subtraction</string>
+    <string name="terms_of_use_url">&lt;a href="http://www.airanza.com/products/apass/tou">Terms of Use&lt;/a></string>
+    <!-- From: file:/C:/java/AndroidStudioProjects/MathQuizAndroid/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#FFFFFF</item>
+        <item name="android:editTextColor">#FFFFFF</item>
+        <item name="android:textColorHint">#FFFFFF</item>
+        <item name="android:itemBackground">#000000</item>
+
+        <item name="android:textColorLink">#FFFFFF</item>
+
+        <item name="android:textCursorDrawable">@drawable/color_cursor</item>
+    </style>
+</resources>

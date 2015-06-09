@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2015.
+  ~
+  ~ AIRANZA, INC.
+  ~ _____________
+  ~   [2015] - [${YEAR}] Adobe Systems Incorporated
+  ~   All Rights Reserved.
+  ~
+  ~  NOTICE:  All information contained herein is, and remains
+  ~  the property of Airanza, Inc. and its suppliers,
+  ~  if any.  The intellectual and technical concepts contained
+  ~  herein are proprietary to Airanza Inc.
+  ~  and its suppliers and may be covered by U.S. and Foreign Patents,
+  ~  patents in process, and are protected by trade secret or copyright law
+  ~
+  ~  Dissemination of this information or reproduction of this material
+  ~  is strictly forbidden unless prior written permission is obtained
+  ~  from Airanza Inc.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@layout/radial_gradient">
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/airanza_logo_white_trans_border" />
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+        <TextView
+            android:id="@+id/ver_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="version:" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true">
+            <TextView
+                android:id="@+id/terms_of_use_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:linksClickable="true"
+                android:text="@string/terms_of_use_url" />
+            <TextView
+                android:id="@+id/airanza_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:linksClickable="true"
+                android:text="@string/airanza_url" />
+            <TextView
+                android:id="@+id/privacy_policy_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:linksClickable="true"
+                android:text="@string/privacy_policy_url" />
+    </RelativeLayout>
+</RelativeLayout><!-- From: file:/C:/java/AndroidStudioProjects/MathQuizAndroid/app/src/main/res/layout/activity_splash.xml -->

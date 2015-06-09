@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Menu Items -->
+    <string name="action_settings">Settings</string>
+    <string name="action_show_splash">About...</string>
+
+    <string name="app_name">MathQuiz</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="evaluate">Evaluate:</string>
+    <string name="addition">Addition</string>
+    <string name="subtraction">Subtraction</string>
+    <string name="multiplication">Multiplication</string>
+    <string name="division">Division</string>
+    <string name="negative_numbers">Negative #s</string>
+    <string name="submit">Submit</string>
+    <string name="problem">Problem</string>
+    <string name="solution">Solution?</string>
+    <string name="feedback_hint">Enter Solution</string>
+    <string name="num_right">RIGHT: 0</string>
+    <string name="num_wrong">WRONG: 0</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear_statistics">Clear Statistics</string>
+
+    <string name="airanza_url">&lt;a href="http://www.airanza.com"&gt;www.airanza.com&lt;/a&gt;</string>
+    <string name="terms_of_use_url">&lt;a href="http://www.airanza.com/products/apass/tou"&gt;Terms of Use&lt;/a&gt;</string>
+    <string name="privacy_policy_url">&lt;a href="http://www.airanza.com/products/apass/privacy"&gt;Privacy Policy&lt;/a&gt;</string>
+
+
+</resources>
