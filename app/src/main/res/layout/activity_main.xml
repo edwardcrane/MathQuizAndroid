@@ -72,54 +72,16 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/problemTextView"
         android:layout_below="@+id/feedbackTextView"
-        android:layout_marginBottom="37dp"
         android:text="@string/submit"
         android:onClick="onSubmit" />
-    
-    <CheckBox
-        android:id="@+id/additionCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/submitButton"
-        android:layout_alignTop="@+id/submitButton"
-        android:layout_marginTop="66dp"
-        android:text="@string/addition"
-        android:onClick="onCheckAdditionCheckBox" />
 
-    <CheckBox
-        android:id="@+id/subtractionCheckBox"
-        android:layout_width="wrap_content"
+    <fragment
+        android:id="@+id/problem_settings_fragment"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/additionCheckBox"
-        android:layout_below="@+id/additionCheckBox"
-        android:text="@string/subtraction" 
-        android:onClick="onCheckSubtractionCheckBox" />
-
-    <CheckBox
-        android:id="@+id/multiplicationCheckBox"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/additionCheckBox"
-        android:layout_below="@+id/subtractionCheckBox"
-        android:text="@string/multiplication"
-        android:onClick="onCheckMultiplicationCheckBox" />
-
-    <CheckBox
-        android:id="@+id/divisionCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/additionCheckBox"
-        android:layout_below="@+id/multiplicationCheckBox"
-        android:text="@string/division"
-        android:onClick="onCheckDivisionCheckBox" />
-
-    <CheckBox
-        android:id="@+id/negativeNumbersCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/additionCheckBox"
-        android:layout_below="@+id/divisionCheckBox"
-        android:text="@string/negative_numbers"
-        android:onClick="onCheckNegativeNumbersCheckBox" />
+        android:layout_below="@+id/submitButton"
+        android:name="com.airanza.mathquiz.ProblemSettingsFragment"
+        tools:layout="@layout/problem_settings_fragment">
+    </fragment>
 
 </RelativeLayout>

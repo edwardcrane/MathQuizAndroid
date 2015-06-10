@@ -1,2 +1,4 @@
 C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\classes\debug
-C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-e565802541f4f9dd31b76babf2fc092f4aa16b22.jar
+C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-78e1f591cf7ded423d710cad1769289b51fa4c1f.jar
+C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-cc24cd12cdb532648d5ebe24708fcf2b8023d4cd.jar
+C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\pre-dexed\debug\classes-06037d3d041682ea3de0828fc93e0f8849527fc9.jar
