@@ -75,13 +75,4 @@
         android:text="@string/submit"
         android:onClick="onSubmit" />
 
-    <fragment
-        android:id="@+id/problem_settings_fragment"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_below="@+id/submitButton"
-        android:name="com.airanza.mathquiz.ProblemSettingsFragment"
-        tools:layout="@layout/problem_settings_fragment">
-    </fragment>
-
 </RelativeLayout>

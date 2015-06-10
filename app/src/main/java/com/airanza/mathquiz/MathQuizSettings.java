@@ -2,8 +2,10 @@ package com.airanza.mathquiz;
 
 import android.content.SharedPreferences;
 
+import java.io.Serializable;
 
-public class MathQuizSettings {
+
+public class MathQuizSettings implements Serializable {
     // Constants for storage/retreival of values from Shared Preferences:
     static final String INCLUDE_ADDITION = "includeAddition";
     static final String INCLUDE_SUBTRACTION = "includeSubtraction";

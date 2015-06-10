@@ -1,6 +1,5 @@
 package com.airanza.mathquiz;
 
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
@@ -19,9 +18,9 @@ import com.airanza.mathquiz.mathproblems.Problem;
 import com.airanza.mathquiz.mathproblems.ProblemGenerator;
 
 public class MainActivity extends Activity {
-	// for saving activity state in bundle:
-	static final String NUMBER_RIGHT = "numberRight";
-	static final String NUMBER_WRONG = "numberWrong";
+
+    public static final int SETTINGS_REQUEST = 100;
+    public static final String MATH_QUIZ_SETTINGS = "mathquizsettings";
 
 	private SharedPreferences prefs = null;
 	
@@ -31,10 +30,6 @@ public class MainActivity extends Activity {
 	TextView feedbackTextView = null;
 	TextView problemTextView = null;
 	
-	private int numRight = 0;
-	private int numWrong = 0;
-
-	private ProblemSettingsFragment problemSettingsFragment = null;
 	private MathQuizSettings mathQuizSettings = new MathQuizSettings();
 
 	@Override
@@ -43,33 +38,13 @@ public class MainActivity extends Activity {
 
 		setContentView(R.layout.activity_main);
 
-		FragmentManager fm = getFragmentManager();
-		problemSettingsFragment = (ProblemSettingsFragment) fm.findFragmentById(R.id.problem_settings_fragment);
-
-   		if(savedInstanceState != null)
-		{
-			// Restore value of members from saved state:
-			numRight = savedInstanceState.getInt(NUMBER_RIGHT);
-			numWrong = savedInstanceState.getInt(NUMBER_WRONG);
-		}
-
 		prefs = getSharedPreferences("mathquiz", MODE_PRIVATE);
 
         mathQuizSettings.setVarsFromSharedPreferences(prefs);
-        problemSettingsFragment.setMathQuizSettings(mathQuizSettings);
 
-		numRight = prefs.getInt(NUMBER_RIGHT, 0);
-		numWrong = prefs.getInt(NUMBER_WRONG, 0);
-		TextView rightView = (TextView)findViewById(R.id.rightTextView);
-		rightView.setText("RIGHT: " + numRight);
-		TextView wrongView = (TextView)findViewById(R.id.wrongTextView);
-		wrongView.setText("WRONG: " + numWrong);
+        updateUIStatistics();
+        updateUIProblem();
 
-        p = getProblemGeneratorFromMathQuizSettings(mathQuizSettings).generateProblem();
-		
-		problemTextView = (TextView)findViewById(R.id.problemTextView);
-		problemTextView.setText(p.toString());
-		
 		// *******  Capture the "DONE" button on Android keyboard
     	answerEditText = (EditText)findViewById(R.id.solutionEditText);
     	answerEditText.setOnEditorActionListener(new OnEditorActionListener() {
@@ -99,6 +74,8 @@ public class MainActivity extends Activity {
 				onShowSplash();
 				break;
 			case(R.id.action_settings):
+                onSettings();
+                break;
 			default:
 		}
 		return super.onOptionsItemSelected(item);
@@ -113,6 +90,20 @@ public class MainActivity extends Activity {
         pg.setIncludeNegativeNumbers(mathQuizSettings.isIncludeNegativeNumbers());
         return(pg);
     }
+
+    public void updateUIProblem() {
+        p = getProblemGeneratorFromMathQuizSettings(mathQuizSettings).generateProblem();
+        TextView problemTextView = (TextView)findViewById(R.id.problemTextView);
+        problemTextView.setText(p.toString());
+    }
+
+    public void updateUIStatistics() {
+        TextView rightView = (TextView)findViewById(R.id.rightTextView);
+        rightView.setText("RIGHT: " + mathQuizSettings.getnRight());
+
+        TextView wrongView = (TextView)findViewById(R.id.wrongTextView);
+        wrongView.setText("WRONG: "+ mathQuizSettings.getnWrong());
+    }
 	
 	public void onSubmit(View view) {
     	answerEditText = (EditText)findViewById(R.id.solutionEditText);
@@ -125,40 +116,25 @@ public class MainActivity extends Activity {
 	    	
 			if(p.evaluate() == answer) {
 				feedbackTextView.setText("YES! [" + answer + "] is correct!");
-				answerEditText.setText("");
 				feedbackTextView.setBackgroundColor(Color.GREEN);
+                mathQuizSettings.setnRight(mathQuizSettings.getnRight() + 1);
+                updateUIProblem();
 
-                p = getProblemGeneratorFromMathQuizSettings(mathQuizSettings).generateProblem();
-				
-				problemTextView = (TextView)findViewById(R.id.problemTextView);
-				problemTextView.setText(p.toString());
-				
-				numRight++;
-				TextView rightView = (TextView)findViewById(R.id.rightTextView);
-				rightView.setText("RIGHT: " + numRight);
-				
 			} else {
 				feedbackTextView.setText("SORRY! [" + answer + "] is incorrect!");
-				answerEditText.setText("");
 				feedbackTextView.setBackgroundColor(Color.RED);
-				
-				numWrong++;
-				TextView wrongView = (TextView)findViewById(R.id.wrongTextView);
-				wrongView.setText("WRONG: "+ numWrong);
+                mathQuizSettings.setnWrong(mathQuizSettings.getnWrong() + 1);
 			}
+            ((EditText)findViewById(R.id.solutionEditText)).setText("");
+            updateUIStatistics();
 		} catch (NumberFormatException nfe) {
 			feedbackTextView.setText("[" + sAnswer + "] could not be formatted into an integer.");
 		}
-		
 	}
 	
 	public void onStop() 
 	{
 		super.onStop();  // always call the superclass method first
-		
-		// save the right/wrong answers and the state of the ProblemGenerator pg.
-        mathQuizSettings.setnRight(numRight);
-        mathQuizSettings.setnWrong(numWrong);
         mathQuizSettings.saveVarsToSharedPreferences(prefs);
 	}
 	
@@ -166,26 +142,35 @@ public class MainActivity extends Activity {
 	{
 		super.onStart();  // Always call the superclass method first
 	}
-	
-//	@Override
-//	public void onSaveInstanceState(Bundle savedInstanceState)
-//	{
-////		ProblemGenerator pg = problemSettingsFragment.getProblemGenerator();
-//		// Save the user's current state
-//		savedInstanceState.putInt(NUMBER_RIGHT, numRight);
-//		savedInstanceState.putInt(NUMBER_WRONG, numWrong);
-//
-////		savedInstanceState.putBoolean(INCLUDE_ADDITION, pg.getIncludeAddition());
-////		savedInstanceState.putBoolean(INCLUDE_SUBTRACTION, pg.getIncludeSubtraction());
-////		savedInstanceState.putBoolean(INCLUDE_MULTIPLICATION, pg.getIncludeMultiplication());
-////		savedInstanceState.putBoolean(INCLUDE_DIVISION, pg.getIncludeDivision());
-////
-////		savedInstanceState.putBoolean(INCLUDE_NEGATIVE_NUMBERS, pg.getIncludeNegativeNumbers());
-//
-//		// Always call the superclass so it can save the view hierarchy state
-//		super.onSaveInstanceState(savedInstanceState);
-//	}
 
+    public void onSettings() {
+        // create Intent
+        Intent intent = new Intent(this, SettingsActivity.class);
+
+        intent.putExtra(MATH_QUIZ_SETTINGS, mathQuizSettings);
+
+        // start the activity (user can cxl with back key).
+        startActivityForResult(intent, SETTINGS_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // Check which request we're responding to
+        if(requestCode == SETTINGS_REQUEST) {
+            if(resultCode == RESULT_OK) {
+                mathQuizSettings = (MathQuizSettings) data.getSerializableExtra(MATH_QUIZ_SETTINGS);
+                TextView rightView = (TextView)findViewById(R.id.rightTextView);
+                rightView.setText("RIGHT: " + mathQuizSettings.getnRight());
+                TextView wrongView = (TextView)findViewById(R.id.wrongTextView);
+                wrongView.setText("WRONG: " + mathQuizSettings.getnWrong());
+
+                ((EditText)findViewById(R.id.solutionEditText)).setText("");
+                updateUIStatistics();
+                updateUIProblem();
+            }
+        }
+    }
+	
 	protected void onShowSplash() {
 		// create Intent
 		Intent intent = new Intent(this, SplashActivity.class);

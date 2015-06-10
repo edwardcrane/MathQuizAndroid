@@ -2,12 +2,16 @@ package com.airanza.mathquiz;
 
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
-public class SettingsActivity extends Activity {
+public class SettingsActivity extends Activity implements View.OnClickListener {
 
     private ProblemSettingsFragment problemSettingsFragment = null;
 
@@ -16,8 +20,36 @@ public class SettingsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        Button submitButton = (Button)findViewById(R.id.settings_submit_button);
+        submitButton.setOnClickListener(this);
+
+        Intent intent = getIntent();
+        MathQuizSettings settings = (MathQuizSettings)intent.getSerializableExtra("mathquizsettings");
+
         FragmentManager fm = getFragmentManager();
         problemSettingsFragment = (ProblemSettingsFragment) fm.findFragmentById(R.id.problem_settings_fragment);
+
+        problemSettingsFragment.setMathQuizSettings(settings);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()) {
+            case R.id.settings_submit_button:
+                onSubmit();
+                break;
+        }
+    }
+    private void onSubmit() {
+        Intent result = new Intent("com.airanza.mathquiz.MainActivity.SETTINGS_REQUEST", Uri.parse("content://result_uri"));
+        result.putExtra(MainActivity.MATH_QUIZ_SETTINGS, problemSettingsFragment.getMathQuizSettings());
+
+        if(getParent() == null) {
+            setResult(Activity.RESULT_OK, result);
+        } else {
+            getParent().setResult(Activity.RESULT_OK, result);
+        }
+        finish();
     }
 
     @Override
@@ -35,7 +67,8 @@ public class SettingsActivity extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_submit) {
+            onSubmit();
             return true;
         }
 
