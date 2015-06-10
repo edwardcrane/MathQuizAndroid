@@ -35,6 +35,7 @@ public class MainActivity extends Activity {
 	private int numWrong = 0;
 
 	private ProblemSettingsFragment problemSettingsFragment = null;
+	private MathQuizSettings mathQuizSettings = new MathQuizSettings();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,8 @@ public class MainActivity extends Activity {
 
 		prefs = getSharedPreferences("mathquiz", MODE_PRIVATE);
 
-		problemSettingsFragment.setVarsFromSharedPreferences(prefs);
+        mathQuizSettings.setVarsFromSharedPreferences(prefs);
+        problemSettingsFragment.setMathQuizSettings(mathQuizSettings);
 
 		numRight = prefs.getInt(NUMBER_RIGHT, 0);
 		numWrong = prefs.getInt(NUMBER_WRONG, 0);
@@ -63,7 +65,7 @@ public class MainActivity extends Activity {
 		TextView wrongView = (TextView)findViewById(R.id.wrongTextView);
 		wrongView.setText("WRONG: " + numWrong);
 
-		p = problemSettingsFragment.getProblemGenerator().generateProblem();
+        p = getProblemGeneratorFromMathQuizSettings(mathQuizSettings).generateProblem();
 		
 		problemTextView = (TextView)findViewById(R.id.problemTextView);
 		problemTextView.setText(p.toString());
@@ -101,6 +103,16 @@ public class MainActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+    private ProblemGenerator getProblemGeneratorFromMathQuizSettings(MathQuizSettings mathQuizSettings) {
+        ProblemGenerator pg = new ProblemGenerator();
+        pg.setIncludeAddition(mathQuizSettings.isIncludeAddition());
+        pg.setIncludeSubtraction(mathQuizSettings.isIncludeSubtraction());
+        pg.setIncludeMultiplication(mathQuizSettings.isIncludeMultiplication());
+        pg.setIncludeDivision(mathQuizSettings.isIncludeDivision());
+        pg.setIncludeNegativeNumbers(mathQuizSettings.isIncludeNegativeNumbers());
+        return(pg);
+    }
 	
 	public void onSubmit(View view) {
     	answerEditText = (EditText)findViewById(R.id.solutionEditText);
@@ -115,8 +127,8 @@ public class MainActivity extends Activity {
 				feedbackTextView.setText("YES! [" + answer + "] is correct!");
 				answerEditText.setText("");
 				feedbackTextView.setBackgroundColor(Color.GREEN);
-				
-				p = problemSettingsFragment.getProblemGenerator().generateProblem();
+
+                p = getProblemGeneratorFromMathQuizSettings(mathQuizSettings).generateProblem();
 				
 				problemTextView = (TextView)findViewById(R.id.problemTextView);
 				problemTextView.setText(p.toString());
@@ -145,11 +157,9 @@ public class MainActivity extends Activity {
 		super.onStop();  // always call the superclass method first
 		
 		// save the right/wrong answers and the state of the ProblemGenerator pg.
-		problemSettingsFragment.saveVarsToSharedPreferences(prefs);
-		SharedPreferences.Editor editor = prefs.edit();
-		editor.putInt(NUMBER_RIGHT, numRight);
-		editor.putInt(NUMBER_WRONG, numWrong);
-		editor.commit();
+        mathQuizSettings.setnRight(numRight);
+        mathQuizSettings.setnWrong(numWrong);
+        mathQuizSettings.saveVarsToSharedPreferences(prefs);
 	}
 	
 	public void onStart()
