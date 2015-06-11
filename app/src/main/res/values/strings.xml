@@ -20,10 +20,16 @@
     <string name="num_wrong">WRONG: 0</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
-    <string name="clear_statistics">Clear Statistics</string>
 
-    <!-- SETTINGS ACTION -->
+    <!-- SETTINGS ACTIVITY -->
     <string name="settings_activity_save">Apply</string>
+    <string name="clear_statistics">Reset Scores</string>
+    <string name="clear_statistics_dialog_positive_button_text">Yes, Reset Scores</string>
+    <string name="clear_statistics_dialog_negative_button_text">No, Don\'t Reset Scores</string>
+    <string name="clear_statistics_dialog_statistics_cleared_text">Scores have been Reset</string>
+    <string name="clear_statistics_dialog_statistics_not_cleared_text">Scores have not been Reset</string>
+    <string name="clear_statistics_confirm_title">Confirm Reset Scores&#8230;</string>
+    <string name="clear_statistics_confirm_message">Are you sure you want to Reset Scores?</string>
 
     <string name="airanza_url">&lt;a href="http://www.airanza.com"&gt;www.airanza.com&lt;/a&gt;</string>
     <string name="terms_of_use_url">&lt;a href="http://www.airanza.com/products/apass/tou"&gt;Terms of Use&lt;/a&gt;</string>

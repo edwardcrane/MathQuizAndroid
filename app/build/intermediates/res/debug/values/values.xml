@@ -45,7 +45,13 @@
     <string name="airanza_url">&lt;a href="http://www.airanza.com">www.airanza.com&lt;/a></string>
     <string name="app_name">MathQuiz</string>
     <string name="cancel">Cancel</string>
-    <string name="clear_statistics">Clear Statistics</string>
+    <string name="clear_statistics">Reset Scores</string>
+    <string name="clear_statistics_confirm_message">Are you sure you want to Reset Scores?</string>
+    <string name="clear_statistics_confirm_title">Confirm Reset Scores…</string>
+    <string name="clear_statistics_dialog_negative_button_text">No, Don\'t Reset Scores</string>
+    <string name="clear_statistics_dialog_positive_button_text">Yes, Reset Scores</string>
+    <string name="clear_statistics_dialog_statistics_cleared_text">Scores have been Reset</string>
+    <string name="clear_statistics_dialog_statistics_not_cleared_text">Scores have not been Reset</string>
     <string name="division">Division</string>
     <string name="evaluate">Evaluate:</string>
     <string name="feedback_hint">Enter Solution</string>

@@ -1,8 +1,11 @@
 package com.airanza.mathquiz;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -118,7 +121,32 @@ public class ProblemSettingsFragment extends PreferenceFragment implements View.
     }
 
 	protected void onClearStatistics(View view) {
-        mathQuizSettings.setnRight(0);
-        mathQuizSettings.setnWrong(0);
+		AlertDialog.Builder alertDialog = new AlertDialog.Builder(view.getContext());
+        alertDialog.setTitle(getText(R.string.clear_statistics_confirm_title));
+        alertDialog.setMessage(getText(R.string.clear_statistics_confirm_message));
+        alertDialog.setIcon(getResources().getDrawable(android.R.drawable.ic_menu_delete));
+
+        alertDialog.setNegativeButton(getText(R.string.clear_statistics_dialog_negative_button_text),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Write your code here to invoke NO event
+//                        Toast.makeText(getActivity().getApplicationContext(), "@string/clear_statistics_dialog_statistics_not_cleared_text", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity().getApplicationContext(), R.string.clear_statistics_dialog_statistics_not_cleared_text, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        alertDialog.setPositiveButton(getText(R.string.clear_statistics_dialog_positive_button_text),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.w(this.getClass().getName(), getText(R.string.clear_statistics_dialog_statistics_cleared_text).toString());
+                        mathQuizSettings.setnRight(0);
+                        mathQuizSettings.setnWrong(0);
+                        Toast.makeText(getActivity().getApplicationContext(), R.string.clear_statistics_dialog_statistics_cleared_text, Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
+        final AlertDialog alert = alertDialog.create();
+        alert.show();
 	}
 }
