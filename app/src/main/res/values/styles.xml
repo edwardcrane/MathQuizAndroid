@@ -19,11 +19,14 @@
         <item name="android:textColorSecondary">#FFFFFF</item>
         <item name="android:editTextColor">#FFFFFF</item>
         <item name="android:textColorHint">#FFFFFF</item>
-        <item name="android:itemBackground">#000000</item>
+        <!--<item name="android:itemBackground">#00FF00</item>-->
 
         <item name="android:textColorLink">#FFFFFF</item>
 
         <item name="android:textCursorDrawable">@drawable/color_cursor</item>
+
+        <!--<item name="android:background">@android:color/white</item>-->
     </style>
+
 
 </resources>

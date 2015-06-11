@@ -20,10 +20,11 @@
     </fragment>
 
     <Button
-        android:id="@+id/settings_submit_button"
-        android:layout_width="wrap_content"
+        android:id="@+id/activity_settings_submit_button"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:layout_below="@+id/problem_settings_fragment"/>
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/problem_settings_fragment"
+        android:text="@string/settings_activity_save">
+    </Button>
 
 </RelativeLayout>

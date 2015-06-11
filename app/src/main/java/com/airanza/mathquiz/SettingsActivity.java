@@ -20,9 +20,6 @@ public class SettingsActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        Button submitButton = (Button)findViewById(R.id.settings_submit_button);
-        submitButton.setOnClickListener(this);
-
         Intent intent = getIntent();
         MathQuizSettings settings = (MathQuizSettings)intent.getSerializableExtra("mathquizsettings");
 
@@ -30,16 +27,21 @@ public class SettingsActivity extends Activity implements View.OnClickListener {
         problemSettingsFragment = (ProblemSettingsFragment) fm.findFragmentById(R.id.problem_settings_fragment);
 
         problemSettingsFragment.setMathQuizSettings(settings);
+
+        Button submitButton = (Button)findViewById(R.id.activity_settings_submit_button);
+        submitButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch(v.getId()) {
-            case R.id.settings_submit_button:
+            case R.id.activity_settings_submit_button:
                 onSubmit();
                 break;
+            default:
         }
     }
+
     private void onSubmit() {
         Intent result = new Intent("com.airanza.mathquiz.MainActivity.SETTINGS_REQUEST", Uri.parse("content://result_uri"));
         result.putExtra(MainActivity.MATH_QUIZ_SETTINGS, problemSettingsFragment.getMathQuizSettings());
