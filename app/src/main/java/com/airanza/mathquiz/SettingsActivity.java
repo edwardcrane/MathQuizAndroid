@@ -10,6 +10,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 
 public class SettingsActivity extends Activity implements View.OnClickListener {
 
@@ -30,6 +33,12 @@ public class SettingsActivity extends Activity implements View.OnClickListener {
 
         Button submitButton = (Button)findViewById(R.id.activity_settings_submit_button);
         submitButton.setOnClickListener(this);
+
+        // Add Ads using Google AdMob:
+        AdView bottomBannerAdView = (AdView)findViewById(R.id.settings_bottom_adview);
+        AdRequest bottomBannerAdRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        bottomBannerAdView.loadAd(bottomBannerAdRequest);
     }
 
     @Override

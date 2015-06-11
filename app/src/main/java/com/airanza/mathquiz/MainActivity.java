@@ -17,6 +17,9 @@ import android.view.KeyEvent;
 import com.airanza.mathquiz.mathproblems.Problem;
 import com.airanza.mathquiz.mathproblems.ProblemGenerator;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class MainActivity extends Activity {
 
     public static final int SETTINGS_REQUEST = 100;
@@ -57,6 +60,12 @@ public class MainActivity extends Activity {
 				return (false);
     		}
     	});
+
+		// Request Ads:
+		AdView topBannerAdView = (AdView)findViewById(R.id.main_top_adview);
+		AdRequest topBannerAdRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+		topBannerAdView.loadAd(topBannerAdRequest);
 	}
 	
 	@Override

@@ -2,11 +2,32 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\ecrane\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jar="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
-        <dex dex="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\pre-dexed\release\support-v4-19.1.0-e565802541f4f9dd31b76babf2fc092f4aa16b22.jar" />
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\pre-dexed\debug\classes-06037d3d041682ea3de0828fc93e0f8849527fc9.jar" />
+    </item>
+    <item
+        jar="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\pre-dexed\debug\classes-a6d8e039d8aff8abe8b498e8e04f504bec680606.jar" />
+    </item>
+    <item
+        jar="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-cc24cd12cdb532648d5ebe24708fcf2b8023d4cd.jar" />
+    </item>
+    <item
+        jar="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\pre-dexed\debug\classes-86a03c28f8a1234908434ada1df932890ef95fe6.jar" />
     </item>
     <item
         jar="C:\Users\ecrane\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
@@ -16,18 +37,11 @@
         <dex dex="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-78e1f591cf7ded423d710cad1769289b51fa4c1f.jar" />
     </item>
     <item
-        jar="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\classes.jar"
+        jar="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.5.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\pre-dexed\debug\classes-06037d3d041682ea3de0828fc93e0f8849527fc9.jar" />
-    </item>
-    <item
-        jar="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\libs\internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-cc24cd12cdb532648d5ebe24708fcf2b8023d4cd.jar" />
+        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
+        <dex dex="C:\java\AndroidStudioProjects\MathQuizAndroid\app\build\intermediates\pre-dexed\debug\classes-1b02cf70860beb32743ca8686053f12ba9c4302c.jar" />
     </item>
 
 </items>

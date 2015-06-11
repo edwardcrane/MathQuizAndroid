@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- For AdMob Ads -->
+    <string name="main_activity_top_banner_ad_unit_id">ca-app-pub-6141378478306258/1485899122</string>
+    <string name="settings_activity_bottom_banner_ad_unit_id">ca-app-pub-6141378478306258/2962632324</string>
+
     <!-- Menu Items -->
     <string name="action_settings">Settings&#8230;</string>
     <string name="action_show_splash">About&#8230;</string>
